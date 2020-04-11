@@ -48,7 +48,7 @@ module.exports = {
   async indexById(req, res) {
     const { id } = req.params;
 
-    const game = await connection('games').where('id', id);
+    const game = await connection('games').where('id', id).first();
 
     res.json(game);
   }
